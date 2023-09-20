@@ -1117,7 +1117,7 @@
                             "storySetId": "story_hibisc_set_1",
                             "storySort": 1,
                             "storyCanShow": true,
-                            "storyIntro": "只有经受住考验，才能成为真正的“宝石”吗？",
+                            "storyIntro": "她的力量有限，但她会努力坚持得久一点。",
                             "storyInfo": "info/obt/memory/story_hibisc_1_1",
                             "storyTxt": "obt/memory/story_hibisc_1_1"
                         }
@@ -31934,7 +31934,7 @@
                             "storySetId": "story_chnut_set_1",
                             "storySort": 1,
                             "storyCanShow": true,
-                            "storyIntro": "她的力量有限，但她会努力坚持得久一点。",
+                            "storyIntro": "只有经受住考验，才能成为真正的“宝石”吗？",
                             "storyInfo": "info/obt/memory/story_chnut_1_1",
                             "storyTxt": "obt/memory/story_chnut_1_1"
                         }
