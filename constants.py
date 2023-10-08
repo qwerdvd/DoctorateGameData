@@ -53,9 +53,7 @@ from models.ZoneTable import ZoneTable
 
 
 def read_excel(excel_name: str) -> dict:
-    path = (
-        Path.absolute(Path(__file__).parent / "excel") / f"{excel_name}.json"
-    )
+    path = Path.absolute(Path(__file__).parent / "excel") / f"{excel_name}.json"
     with Path.open(path, "rb") as f:
         return json.load(f)
 
