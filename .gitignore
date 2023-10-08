@@ -1,2 +1,7 @@
 format.py
 persistent_res.json
+__pycache__
+.venv
+.ruff_cache
+.pdm-build
+.pdm-python
