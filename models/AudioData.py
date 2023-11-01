@@ -12,6 +12,7 @@ class BGMBank(BaseStruct):
     volume: float
     crossfade: float
     delay: float
+    fadeStyleId: Union[str, None] = None
 
 
 class SoundFXBankSoundFX(BaseStruct):
@@ -73,6 +74,22 @@ class BattleVoiceData(BaseStruct):
     voiceTypeOptions: List[BattleVoiceOption]
 
 
+class AudioDataDucking(BaseStruct):
+    bank: str
+    volume: float
+    fadeTime: float
+    delay: float
+    fadeStyleId: Union[str, None] = None
+
+
+class AudioDataFadeStyle(BaseStruct):
+    styleName: str
+    fadeinTime: float
+    fadeoutTime: float
+    fadeinType: str
+    fadeoutType: str
+
+
 class AudioData(BaseStruct):
     __version__ = "23-09-29-15-41-03-569cae"
 
@@ -84,3 +101,5 @@ class AudioData(BaseStruct):
     musics: List[MusicData]
     soundFxVoiceLang: Dict[str, Dict[str, Dict[str, str]]]
     bankAlias: Dict[str, str]
+    duckings: List[AudioDataDucking]
+    fadeStyles: List[AudioDataFadeStyle]

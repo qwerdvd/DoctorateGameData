@@ -676,6 +676,84 @@
             "lockedText": null,
             "canPreview": false
         },
+        "act29side_zone1": {
+            "zoneID": "act29side_zone1",
+            "zoneIndex": 0,
+            "type": "ACTIVITY",
+            "zoneNameFirst": null,
+            "zoneNameSecond": "朝见双塔",
+            "zoneNameTitleCurrent": null,
+            "zoneNameTitleUnCurrent": null,
+            "zoneNameTitleEx": null,
+            "zoneNameThird": null,
+            "lockedText": null,
+            "canPreview": false
+        },
+        "act29side_zone2": {
+            "zoneID": "act29side_zone2",
+            "zoneIndex": 1,
+            "type": "ACTIVITY",
+            "zoneNameFirst": null,
+            "zoneNameSecond": "恩典永恒",
+            "zoneNameTitleCurrent": null,
+            "zoneNameTitleUnCurrent": null,
+            "zoneNameTitleEx": null,
+            "zoneNameThird": null,
+            "lockedText": null,
+            "canPreview": false
+        },
+        "act29side_zone3": {
+            "zoneID": "act29side_zone3",
+            "zoneIndex": 2,
+            "type": "ACTIVITY",
+            "zoneNameFirst": null,
+            "zoneNameSecond": "权威无情",
+            "zoneNameTitleCurrent": null,
+            "zoneNameTitleUnCurrent": null,
+            "zoneNameTitleEx": null,
+            "zoneNameThird": null,
+            "lockedText": null,
+            "canPreview": false
+        },
+        "act21sre_zone1": {
+            "zoneID": "act21sre_zone1",
+            "zoneIndex": 0,
+            "type": "ACTIVITY",
+            "zoneNameFirst": null,
+            "zoneNameSecond": "连阴雨季",
+            "zoneNameTitleCurrent": null,
+            "zoneNameTitleUnCurrent": null,
+            "zoneNameTitleEx": null,
+            "zoneNameThird": null,
+            "lockedText": null,
+            "canPreview": false
+        },
+        "act21sre_zone2": {
+            "zoneID": "act21sre_zone2",
+            "zoneIndex": 1,
+            "type": "ACTIVITY",
+            "zoneNameFirst": null,
+            "zoneNameSecond": "铳与秩序",
+            "zoneNameTitleCurrent": null,
+            "zoneNameTitleUnCurrent": null,
+            "zoneNameTitleEx": null,
+            "zoneNameThird": null,
+            "lockedText": null,
+            "canPreview": false
+        },
+        "act21sre_zone3": {
+            "zoneID": "act21sre_zone3",
+            "zoneIndex": 2,
+            "type": "ACTIVITY",
+            "zoneNameFirst": null,
+            "zoneNameSecond": "自诩荒野",
+            "zoneNameTitleCurrent": null,
+            "zoneNameTitleUnCurrent": null,
+            "zoneNameTitleEx": null,
+            "zoneNameThird": null,
+            "lockedText": null,
+            "canPreview": false
+        },
         "act28side_zone1": {
             "zoneID": "act28side_zone1",
             "zoneIndex": 0,
@@ -3197,6 +3275,45 @@
             "zoneNameThird": null,
             "lockedText": null,
             "canPreview": false
+        },
+        "permanent_sidestory_21_zone1": {
+            "zoneID": "permanent_sidestory_21_zone1",
+            "zoneIndex": 0,
+            "type": "SIDESTORY",
+            "zoneNameFirst": null,
+            "zoneNameSecond": "连阴雨季",
+            "zoneNameTitleCurrent": null,
+            "zoneNameTitleUnCurrent": null,
+            "zoneNameTitleEx": null,
+            "zoneNameThird": null,
+            "lockedText": null,
+            "canPreview": false
+        },
+        "permanent_sidestory_21_zone2": {
+            "zoneID": "permanent_sidestory_21_zone2",
+            "zoneIndex": 1,
+            "type": "SIDESTORY",
+            "zoneNameFirst": null,
+            "zoneNameSecond": "铳与秩序",
+            "zoneNameTitleCurrent": null,
+            "zoneNameTitleUnCurrent": null,
+            "zoneNameTitleEx": null,
+            "zoneNameThird": null,
+            "lockedText": null,
+            "canPreview": false
+        },
+        "permanent_sidestory_21_zone3": {
+            "zoneID": "permanent_sidestory_21_zone3",
+            "zoneIndex": 2,
+            "type": "SIDESTORY",
+            "zoneNameFirst": null,
+            "zoneNameSecond": "自诩荒野",
+            "zoneNameTitleCurrent": null,
+            "zoneNameTitleUnCurrent": null,
+            "zoneNameTitleEx": null,
+            "zoneNameThird": null,
+            "lockedText": null,
+            "canPreview": false
         }
     },
     "weeklyAdditionInfo": {
@@ -3286,6 +3403,30 @@
         }
     },
     "zoneValidInfo": {
+        "act29side_zone1": {
+            "startTs": 1698811200,
+            "endTs": 1700596799
+        },
+        "act29side_zone2": {
+            "startTs": 1699430400,
+            "endTs": 1700596799
+        },
+        "act29side_zone3": {
+            "startTs": 1700035200,
+            "endTs": 1700596799
+        },
+        "act21sre_zone1": {
+            "startTs": 1697961600,
+            "endTs": 1698782399
+        },
+        "act21sre_zone2": {
+            "startTs": 1697961600,
+            "endTs": 1698782399
+        },
+        "act21sre_zone3": {
+            "startTs": 1697961600,
+            "endTs": 1698782399
+        },
         "act28side_zone1": {
             "startTs": 1693886400,
             "endTs": 1695067199

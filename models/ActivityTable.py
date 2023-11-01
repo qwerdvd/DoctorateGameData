@@ -1,3 +1,4 @@
+from enum import Enum
 from typing import Any, Dict, List, Union
 
 from .common import BaseStruct
@@ -1181,6 +1182,7 @@ class SharedCharData(BaseStruct):
     skin: Union[str, None] = None
     skills: Union[List[SharedCharDataSharedCharSkillData], None] = None
     crisisRecord: Union[Dict[str, int], None] = None
+    crisisV2Record: Union[Dict[str, int], None] = None
     currentTmpl: Union[str, None] = None
     tmpl: Union[Dict[str, SharedCharDataTmplData], None] = None
 
@@ -1328,6 +1330,7 @@ class ActivityBossRushData(BaseStruct):
 
 class ActivityFloatParadeDataConstData(BaseStruct):
     cityName: str
+    cityNamePic: str
     lowStandard: float
     variationTitle: str
     ruleDesc: str
@@ -1946,6 +1949,155 @@ class Act42D0Data(BaseStruct):
     trackPointPeriodData: List[int]
 
 
+class Act29SideFragData(BaseStruct):
+    fragId: str
+    sortId: int
+    fragName: str
+    fragIcon: str
+    fragStoreIcon: str
+
+
+class Act29SideOrcheType(Enum):
+    ORCHE_1 = "ORCHE_1"
+    ORCHE_2 = "ORCHE_2"
+    ORCHE_3 = "ORCHE_3"
+    ENUM = "ENUM"
+
+
+class Act29SideOrcheData(BaseStruct):
+    id_: str = field(name="id")
+    name: str
+    desc: str
+    icon: str
+    sortId: int
+    orcheType: Act29SideOrcheType
+
+
+class Act29SideProductType(Enum):
+    PRODUCT_TYPE_1 = "PRODUCT_TYPE_1"
+    PRODUCT_TYPE_2 = "PRODUCT_TYPE_2"
+    PRODUCT_TYPE_3 = "PRODUCT_TYPE_3"
+    PRODUCT_TYPE_4 = "PRODUCT_TYPE_4"
+    PRODUCT_TYPE_5 = "PRODUCT_TYPE_5"
+    ENUM = "ENUM"
+
+
+class Act29SideProductGroupData(BaseStruct):
+    groupId: str
+    groupName: str
+    groupIcon: str
+    groupDesc: str
+    defaultBgmSignal: str
+    productList: List[str]
+    groupEngName: str
+    groupSmallName: str
+    groupTypeIcon: str
+    groupStoreIconId: str
+    groupTypeBasePic: str
+    groupTypeEyeIcon: str
+    groupSortId: int
+    formList: List[str]
+    sheetId: str
+    sheetNum: int
+    sheetRotateSpd: float
+    productType: Act29SideProductType
+    productDescColor: str
+    playTintColor: str
+    confirmTintColor: str
+    confirmDescColor: str
+    bagThemeColor: str
+
+
+class Act29SideProductData(BaseStruct):
+    id_: str = field(name="id")
+    orcheId: Union[str, None]
+    groupId: str
+    formId: Union[str, None]
+    musicId: str
+
+
+class Act29SideFormData(BaseStruct):
+    formId: str
+    fragIdList: List[str]
+    formDesc: str
+    productIdDict: Dict[str, str]
+    withoutOrcheProductId: str
+    groupId: str
+    formSortId: int
+
+
+class Act29SideInvestResultData(BaseStruct):
+    resultId: str
+    resultTitle: str
+    resultDesc1: str
+    resultDesc2: str
+
+
+class Act29SideInvestType(Enum):
+    MAJOR = "MAJOR"
+    RARE = "RARE"
+    NORMAL = "NORMAL"
+
+
+class Act29SideInvestData(BaseStruct):
+    investId: str
+    investType: Act29SideInvestType
+    investNpcName: str
+    storyId: str
+    investNpcPic: str
+    investNpcAvatarPic: str
+    majorNpcPic: Union[str, None]
+    majorNpcBlackPic: Union[str, None]
+    reward: Union[ItemBundle, None]
+    investSucResultId: Union[str, None]
+    investFailResultId: str
+    investRareResultId: Union[str, None]
+
+
+class Act29SideConstData(BaseStruct):
+    majorInvestUnlockItemName: str
+    wrongTipsTriggerTime: int
+    majorInvestCompleteImgId: str
+    majorInvestUnknownAvatarId: str
+    majorInvestDetailDesc1: str
+    majorInvestDetailDesc2: str
+    majorInvestDetailDesc3: str
+    majorInvestDetailDesc4: str
+    hiddenInvestImgId: str
+    hiddenInvestHeadImgId: str
+    hiddenInvestNpcName: str
+    unlockLevelId: str
+    investResultHint: str
+    investUnlockText: str
+    noOrcheDesc: str
+
+
+class Act29SideZoneAdditionData(BaseStruct):
+    zoneId: str
+    unlockText: str
+
+
+class Act29SideMusicData(BaseStruct):
+    groupId: str
+    orcheId: Union[str, None]
+    musicId: str
+
+
+class Act29SideData(BaseStruct):
+    fragDataMap: Dict[str, Act29SideFragData]
+    orcheDataMap: Dict[str, Act29SideOrcheData]
+    productGroupDataMap: Dict[str, Act29SideProductGroupData]
+    productDataMap: Dict[str, Act29SideProductData]
+    formDataMap: Dict[str, Act29SideFormData]
+    investResultDataMap: Dict[str, Act29SideInvestResultData]
+    investDataMap: Dict[str, Act29SideInvestData]
+    majorInvestIdList: List[str]
+    rareInvestIdList: List[str]
+    constData: Act29SideConstData
+    zoneAdditionDataMap: Dict[str, Act29SideZoneAdditionData]
+    musicDataMap: List[Act29SideMusicData]
+
+
 class ActivityTableActivityDetailTable(BaseStruct):
     DEFAULT: Dict[str, DefaultFirstData]
     CHECKIN_ONLY: Dict[str, DefaultCheckInData]
@@ -1962,6 +2114,7 @@ class ActivityTableActivityDetailTable(BaseStruct):
     TYPE_ACT17SIDE: Dict[str, Act17sideData]
     TYPE_ACT20SIDE: Dict[str, Act20SideData]
     TYPE_ACT21SIDE: Dict[str, Act21SideData]
+    TYPE_ACT29SIDE: Dict[str, Act29SideData]
     LOGIN_ONLY: Dict[str, ActivityLoginData]
     SWITCH_ONLY: Dict[str, ActivitySwitchCheckinData]
     MINISTORY: Dict[str, ActivityMiniStoryData]
@@ -1974,9 +2127,9 @@ class ActivityTableActivityDetailTable(BaseStruct):
     MAIN_BUFF: Dict[str, ActivityMainlineBuffData]
     TYPE_ACT24SIDE: Dict[str, Act24SideData]
     TYPE_ACT25SIDE: Dict[str, Act25SideData]
-    TYPE_ACT38D1: Dict[str, Act38D1Data]
     TYPE_ACT27SIDE: Dict[str, Act27SideData]
     TYPE_ACT42D0: Dict[str, Act42D0Data]
+    TYPE_ACT38D1: Union[Dict[str, Act38D1Data], None] = None  # Remove in 2.1.21
 
 
 class ActivityStageRewardData(BaseStruct):

@@ -41,9 +41,11 @@ class GamedataConst(BaseStruct):
     commonPotentialLvlUpCount: int
     completeCrystalBonus: int
     completeGainBonus: float
+    continuousActionOpen: bool
     creditLimit: int
-    crisisUnlockStage: str
     dataVersion: str
+    defaultMinContinuousBattleTimes: int
+    defaultMaxContinuousBattleTimes: int
     defCDPrimColor: str
     defCDSecColor: str
     defMax: float
@@ -117,3 +119,4 @@ class GamedataConst(BaseStruct):
     isVoucherClassicItemDistinguishable: Union[bool, None] = None
     operatorRecordsStartTime: Union[int, None] = None
     subProfessionDamageTypePairs: Union[Dict[str, int], None] = None
+    crisisUnlockStage: Union[str, None] = None  # Removed in 2.1.21

@@ -102,6 +102,7 @@ class StageData(BaseStruct):
     startButtonOverrideId: Union[str, None]
     isStagePatch: bool
     mainStageId: Union[str, None]
+    canContinuousBattle: Union[bool, None] = None
     canUseCharm: Union[bool, None] = None
     canUseTech: Union[bool, None] = None
     canUseTrapTool: Union[bool, None] = None

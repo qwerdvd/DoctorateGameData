@@ -285,11 +285,27 @@ class ActivityCustomDataAct20sideCustomData(BaseStruct):
     residentCartDatas: Dict[str, Dict[str, str]]
 
 
+class Act21SideDataZoneAddtionData(BaseStruct):
+    zoneId: str
+    unlockText: str
+    stageUnlockText: Union[str, None]
+    entryId: str
+
+
+class Act21SideDataConstData(BaseStruct):
+    lineConnectZone: str
+
+
+class ActivityCustomDataAct21sideCustomData(BaseStruct):
+    zoneAdditionDataMap: Dict[str, Act21SideDataZoneAddtionData]
+    constData: Act21SideDataConstData
+
+
 class ActivityCustomData(BaseStruct):
     TYPE_ACT17SIDE: Dict[str, Act17sideData]
     TYPE_ACT25SIDE: Dict[str, ActivityCustomDataAct25sideCustomData]
     TYPE_ACT20SIDE: Dict[str, ActivityCustomDataAct20sideCustomData]
-    TYPE_ACT21SIDE: Dict[str, None]
+    TYPE_ACT21SIDE: Dict[str, ActivityCustomDataAct21sideCustomData]
 
 
 class RetroTrailRuleData(BaseStruct):

@@ -111,6 +111,13 @@ class ActArchiveResDataLogArchiveResItemData(BaseStruct):
     logDesc: str
 
 
+class ActArchiveResDataChallengeBookArchiveResItemData(BaseStruct):
+    storyId: str
+    titleName: str
+    storyName: str
+    textId: str
+
+
 class ActArchiveResData(BaseStruct):
     pics: Dict[str, ActArchiveResDataPicArchiveResItemData]
     audios: Dict[str, ActArchiveResDataAudioArchiveResItemData]
@@ -119,6 +126,7 @@ class ActArchiveResData(BaseStruct):
     news: Dict[str, ActArchiveResDataNewsArchiveResItemData]
     landmarks: Dict[str, ActArchiveResDataLandmarkArchiveResItemData]
     logs: Dict[str, ActArchiveResDataLogArchiveResItemData]
+    challengeBooks: Dict[str, ActArchiveResDataChallengeBookArchiveResItemData]
 
 
 class ActArchiveTimelineItemData(BaseStruct):
@@ -195,8 +203,17 @@ class ActArchiveChapterLogData(BaseStruct):
     chapterIcon: str
 
 
+class ActArchiveChallengeBookItemData(BaseStruct):
+    storyId: str
+    sortId: int
+
+
+class ActArchiveChallengeBookData(BaseStruct):
+    stories: Dict[str, ActArchiveChallengeBookItemData]
+
+
 class ActArchiveComponentData(BaseStruct):
-    pic: ActArchivePicData
+    pic: Union[ActArchivePicData, None] = None
     timeline: Union[ActArchiveTimelineData, None] = None
     music: Union[ActArchiveMusicData, None] = None
     story: Union[ActArchiveStoryData, None] = None
@@ -204,6 +221,7 @@ class ActArchiveComponentData(BaseStruct):
     news: Union[ActArchiveNewsData, None] = None
     landmark: Union[Dict[str, ActArchiveLandmarkItemData], None] = None
     log: Union[Dict[str, ActArchiveChapterLogData], None] = None
+    challengeBook: Union[ActArchiveChallengeBookData, None] = None
 
 
 class ActArchiveComponentTable(BaseStruct):

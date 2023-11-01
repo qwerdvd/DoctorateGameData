@@ -18,6 +18,7 @@ from models.CheckinTable import CheckinTable
 from models.ClimbTowerTable import ClimbTowerTable
 from models.ClueData import ClueData
 from models.CrisisTable import CrisisTable
+from models.CrisisV2Table import CrisisV2Table
 from models.DisplayMetaTable import DisplayMetaTable
 from models.EnemyHandbookTable import EnemyHandbookTable
 from models.FavorTable import FavorTable
@@ -74,6 +75,7 @@ class ExcelTableManager:
     climb_tower_table_: ClimbTowerTable
     clue_data_: ClueData
     crisis_table_: CrisisTable
+    crisis_v2_table_: CrisisV2Table
     display_meta_table_: DisplayMetaTable
     enemy_handbook_table_: EnemyHandbookTable
     favor_table_: FavorTable
@@ -239,6 +241,15 @@ class ExcelTableManager:
     @property
     def CRISIS_TABLE(self) -> CrisisTable:
         return self.crisis_table_
+
+    @property
+    def CRISIS_V2_TABLE(self) -> CrisisV2Table:
+        return self.crisis_v2_table_
+
+    async def crisis_v2_table(self) -> None:
+        self.crisis_v2_table_ = CrisisV2Table.convert(
+            read_excel("crisis_v2_table"),
+        )
 
     async def display_meta_table(self) -> None:
         self.display_meta_table_ = DisplayMetaTable.convert(
@@ -527,7 +538,6 @@ class ExcelTableManager:
         return self.zone_table_
 
     async def preload_table(self) -> None:
-        tasks = []
         for name, method in inspect.getmembers(self):
             if (
                 inspect.iscoroutinefunction(method)
@@ -535,7 +545,6 @@ class ExcelTableManager:
                 and name != "preload_table"
             ):
                 await method()
-        await asyncio.gather(*tasks)
 
 
 Excel = ExcelTableManager()

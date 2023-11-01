@@ -162,6 +162,7 @@ class RoguelikeTopicChallenge(BaseStruct):
     challengeTasks: Dict[str, RoguelikeTopicChallengeTask]
     defaultTaskId: str
     rewards: List[ItemBundle]
+    challengeStoryId: Union[str, None] = None
 
 
 class RoguelikeTopicDifficulty(BaseStruct):
@@ -321,7 +322,7 @@ class RoguelikeArchiveComponentData(BaseStruct):
     buff: ActArchiveBuffData
     totem: Union[ActArchiveTotemData, None]
     chaos: Union[ActArchiveChaosData, None]
-    challengeBook: Dict[str, Dict[str, None]]
+    challengeBook: Union[Dict[str, Dict[str, None]], None] = None  # Removed in 2.1.21
 
 
 class RoguelikeArchiveUnlockCondDesc(BaseStruct):
@@ -351,6 +352,10 @@ class RoguelikeTopicDetailConstCharUpgradeData(BaseStruct):
     evolvePhase: int
     skillLevel: int
     skillSpecializeLevel: int
+
+
+class RoguelikeTopicDetailConstPredefinedPlayerLevelData(BaseStruct):
+    levels: Dict[str, RoguelikeTopicDetailConstPlayerLevelData]
 
 
 class RoguelikeTopicDetailConst(BaseStruct):
@@ -384,6 +389,10 @@ class RoguelikeTopicDetailConst(BaseStruct):
     outerBuffTokenSum: int
     needAllFrontNode: bool
     showBlurBack: bool
+    predefinedLevelTable: Union[
+        Dict[str, RoguelikeTopicDetailConstPredefinedPlayerLevelData],
+        None,
+    ] = None
 
 
 class RoguelikeGameInitData(BaseStruct):
@@ -731,6 +740,12 @@ class RoguelikePredefinedStyleData(BaseStruct):
     styleConfig: int
 
 
+class RoguelikeGameExploreToolData(BaseStruct):
+    itemId: str
+    trapId: str
+    trapDesc: str
+
+
 class RoguelikeTopicDetail(BaseStruct):
     updates: List[RoguelikeTopicUpdate]
     enrolls: Dict[str, RoguelikeTopicEnroll]
@@ -779,6 +794,7 @@ class RoguelikeTopicDetail(BaseStruct):
         RoguelikeDifficultyUpgradeRelicGroupData,
     ]
     styleConfig: Dict[str, RoguelikePredefinedStyleData]
+    exploreTools: Union[Dict[str, RoguelikeGameExploreToolData], None] = None
     styles: Union[Dict[str, RoguelikePredefinedStyleData], None] = {}
 
 
@@ -1190,7 +1206,7 @@ class RL03DifficultyExt(BaseStruct):
     modeDifficulty: str
     grade: int
     totemProb: Union[int, float]
-    relicDevLevel: str
+    relicDevLevel: Union[str, None]
     buffs: Union[List[str], None]
     buffDesc: List[str]
 

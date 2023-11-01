@@ -37,9 +37,6 @@ class CrisisTable(BaseStruct):
     __version__ = "23-09-29-15-41-03-569cae"
 
     seasonInfo: List[CrisisClientDataSeasonInfo]
-    tempAppraise: List[StringKeyFrames]
-    permAppraise: List[StringKeyFrames]
-    mapRankInfo: Dict[str, CrisisMapRankInfo]
     meta: str
     unlockCoinLv3: int
     hardPointPerm: int
@@ -47,3 +44,6 @@ class CrisisTable(BaseStruct):
     voiceGrade: int
     crisisRuneCoinUnlockItemTitle: str
     crisisRuneCoinUnlockItemDesc: str
+    tempAppraise: Union[List[StringKeyFrames], None] = None  # Removed in 2.1.21
+    permAppraise: Union[List[StringKeyFrames], None] = None  # Removed in 2.1.21
+    mapRankInfo: Union[Dict[str, CrisisMapRankInfo], None] = None  # Removed in 2.1.21
