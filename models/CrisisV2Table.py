@@ -1,5 +1,6 @@
-from typing import Dict, List, Union
 from enum import Enum
+from typing import Dict
+
 from .common import BaseStruct
 
 from msgspec import field

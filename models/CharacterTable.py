@@ -53,6 +53,7 @@ class AttributesData(BaseStruct):
     sleepImmune: bool
     frozenImmune: bool
     levitateImmune: bool
+    disarmedCombatImmune: bool
 
 
 class CharacterDataAttributesKeyFrame(BaseStruct):

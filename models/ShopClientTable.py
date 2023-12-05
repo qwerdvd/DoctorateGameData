@@ -33,6 +33,7 @@ class ShopRecommendTemplateNormalGiftParam(BaseStruct):
     logoId: str
     color: str
     haveMark: bool
+    availCount: int
 
 
 class ShopRecommendTemplateNormalSkinParam(BaseStruct):
